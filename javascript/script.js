@@ -29,12 +29,25 @@ function createElem() {
 }
 
 function AddTodo() {
-  createElem();
+  if(input.value == ""){
+    input.classList.add("is-invalid");
+  }else{
+    input.classList.remove("is-invalid");
+    input.classList.add("is-valid");
+    createElem();
+  }
+
 }
 
 function AddElemWithEnter(e) {
   if (e.keyCode === 13) {
-    createElem();
+    if(input.value == ""){
+      input.classList.add("is-invalid");
+    }else{
+      input.classList.remove("is-invalid");
+      input.classList.add("is-valid");
+      createElem();
+    }
   }
 }
 
